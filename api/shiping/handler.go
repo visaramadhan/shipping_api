@@ -5,10 +5,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/shipping_api/api/destination"
-	"github.com/shipping_api/dto"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
+	"github.com/visaramadhan/shipping_api.git/api/destination"
+	"github.com/visaramadhan/shipping_api.git/dto"
 	"gorm.io/gorm"
 )
 
@@ -149,7 +149,7 @@ func (h *shipingHandler) CalculateShippingCost(c *gin.Context) {
 		"message": "Shipping cost calculated successfully",
 		"data": map[string]interface{}{
 			"distance": payload.DestinationLongLat,
-			"cost":     *cost,
+			"cost":     cost,
 		},
 	})
 }
